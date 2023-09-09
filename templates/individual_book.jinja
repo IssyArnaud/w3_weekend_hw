@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <ul>
+            <li>Title: {{index.title}}</li>
+            <li>Author: {{index.author}}</li>
+            <li>Genre: {{index.genre}}</li>
+            {% if index.checked_out %}
+            <li> CHECKED OUT </li>
+            {% else %}
+            <li> IN STOCK </li>
+            <form action="/books" method="post">
+            <label for="reserve"> Would you like to reserve this book? </label>
+            <input type="checkbox" name="reserve" id="reserve"/>
+            <<input type="submit" value="Check out Book"/>
+            </form>
+            {% endif %}
+        </ul>
+    </body>
+</html>
