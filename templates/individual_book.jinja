@@ -8,15 +8,15 @@
             <li>Title: {{index.title}}</li>
             <li>Author: {{index.author}}</li>
             <li>Genre: {{index.genre}}</li>
-            {% if index.checked_out %}
-            <li> CHECKED OUT </li>
-            {% else %}
+            {% if index.in_stock %}
             <li> IN STOCK </li>
-            <form action="/books" method="post">
+            <form action="/books/<index>" method="post">
             <label for="reserve"> Would you like to reserve this book? </label>
             <input type="checkbox" name="reserve" id="reserve"/>
-            <<input type="submit" value="Check out Book"/>
+            <input type="submit" value="Check out Book"/>
             </form>
+            {% else %}
+            <li> CHECKED OUT </li>
             {% endif %}
         </ul>
     </body>

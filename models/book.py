@@ -4,4 +4,7 @@ class Book():
         self.title = input_title
         self.author = input_author
         self.genre = input_genre
-        self.checked_out = False
+        self.in_stock = True
+    
+    def reserve_book(self):
+        self.in_stock = False
